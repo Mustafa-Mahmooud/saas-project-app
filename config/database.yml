@@ -1,0 +1,19 @@
+default: &default
+  adapter: sqlserver
+  host: localhost
+  port: 1433
+  integrated_security: true
+  encrypt: false
+  trust_server_certificate: true
+
+development:
+  <<: *default
+  database: saas_project_app_development
+
+test:
+  <<: *default
+  database: saas_project_app_test
+
+production:
+  <<: *default
+  database: saas_project_app_production
